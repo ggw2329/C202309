@@ -26,21 +26,30 @@ void classifyStudents(int scores[], char targetGrade) {
 	}
 }
 int sumScores(int scores[]) {
-	int i;
-	int sum = 0;
+	int sum = 0; //sum의 초기값0
 
-	for (i = 1; i <= STUDENTS; i = i + 1) {
-		scores[i]
+	for (int i = 0; i <STUDENTS; i++) { // i가 STUDENTS보다 작을때까지 1을 더함
+		sum += scores[i]; // scores각 배열을 더함
 	}
+	return sum;
 }
-void main() {
-	value = sumScores(int scores[]);
-}
-double averageScores(int scores[]) {
 
+double averageScores(int scores[]) { //double은 실수를 표현함
+	int sum = sumScores(scores); //sum은 sumScores함숫값
+	double average = (double)sum / (double)STUDENTS;//average는 sum/STUDENTS 값이다
+	return average;
 }
 void printRanks(int scores[]) {
-
+	int ranks[STUDENTS];
+	for (int i = 0; i < STUDENTS; i++) {
+		ranks[i] = 1;// 초기 순위를 1로 설정
+		for (int j = 0; j < STUDENTS; j++) {
+			if (scores[j] > scores[i]) {
+				ranks[i]++; // 현재 요소보다 큰 다른 요소가 있으면 순위 증가
+			}
+		}
+		printf("%d 학생의 순위는 %d 입니다.\n", i, ranks[i]);
+	}
 }
 int main() {
 	int scores[STUDENTS];
