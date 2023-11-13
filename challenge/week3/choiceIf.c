@@ -19,5 +19,5 @@ int main() {
 	else {
 		printf("잘못 입력하셨습니다.");//그 외 숫자면 잘못 입력 출력
 	}
-	return = 0;
+	return 0;
 }

@@ -9,3 +9,5 @@ int main() {
 		}
 		printf("Hello world %d\n", i);
 	}
+	return 0;
+}
